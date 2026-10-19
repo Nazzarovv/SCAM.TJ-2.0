@@ -1,0 +1,235 @@
+{
+  "app_name": "SCAM.TJ 3.0",
+  "personality": "1 iOS-Native Clean (Premium Minimal) paired with structural radii from 4 Tactile (Cash App / Duolingo warmth)",
+  "personality_one_liner": "A highly polished, trustworthy, and premium security tool that feels like a native OS feature with tactile, approachable elements.",
+  "color": {
+    "light": {
+      "surface": "#F7F7F9",
+      "onSurface": "#111112",
+      "surfaceSecondary": "#FFFFFF",
+      "onSurfaceSecondary": "#111112",
+      "surfaceTertiary": "#EAEAEF",
+      "onSurfaceTertiary": "#111112",
+      "surfaceInverse": "#111112",
+      "onSurfaceInverse": "#FFFFFF",
+      "brand": "#DE3B40",
+      "onBrand": "#FFFFFF",
+      "brandPrimary": "#111112",
+      "onBrandPrimary": "#FFFFFF",
+      "brandSecondary": "#F7F7F9",
+      "onBrandSecondary": "#111112",
+      "brandTertiary": "#FCE9E9",
+      "onBrandTertiary": "#DE3B40",
+      "success": "#10B981",
+      "onSuccess": "#FFFFFF",
+      "warning": "#F59E0B",
+      "onWarning": "#FFFFFF",
+      "error": "#DE3B40",
+      "onError": "#FFFFFF",
+      "info": "#3B82F6",
+      "onInfo": "#FFFFFF",
+      "riskSafe": "#10B981",
+      "onRiskSafe": "#FFFFFF",
+      "riskSuspicious": "#F59E0B",
+      "onRiskSuspicious": "#FFFFFF",
+      "riskDangerous": "#DE3B40",
+      "onRiskDangerous": "#FFFFFF",
+      "riskUnknown": "#64748B",
+      "onRiskUnknown": "#FFFFFF",
+      "border": "#E5E5EA",
+      "borderStrong": "#C7C7CC",
+      "divider": "#E5E5EA",
+      "muted": "#686873"
+    },
+    "dark": {
+      "surface": "#0D0D0E",
+      "onSurface": "#FFFFFF",
+      "surfaceSecondary": "#1A1A1C",
+      "onSurfaceSecondary": "#FFFFFF",
+      "surfaceTertiary": "#252528",
+      "onSurfaceTertiary": "#FFFFFF",
+      "surfaceInverse": "#F7F7F9",
+      "onSurfaceInverse": "#111112",
+      "brand": "#DE3B40",
+      "onBrand": "#FFFFFF",
+      "brandPrimary": "#FFFFFF",
+      "onBrandPrimary": "#0D0D0E",
+      "brandSecondary": "#252528",
+      "onBrandSecondary": "#FFFFFF",
+      "brandTertiary": "#311818",
+      "onBrandTertiary": "#FF8A8A",
+      "success": "#10B981",
+      "onSuccess": "#FFFFFF",
+      "warning": "#F59E0B",
+      "onWarning": "#FFFFFF",
+      "error": "#DE3B40",
+      "onError": "#FFFFFF",
+      "info": "#3B82F6",
+      "onInfo": "#FFFFFF",
+      "riskSafe": "#10B981",
+      "onRiskSafe": "#0D0D0E",
+      "riskSuspicious": "#F59E0B",
+      "onRiskSuspicious": "#0D0D0E",
+      "riskDangerous": "#DE3B40",
+      "onRiskDangerous": "#FFFFFF",
+      "riskUnknown": "#64748B",
+      "onRiskUnknown": "#FFFFFF",
+      "border": "#2C2C2E",
+      "borderStrong": "#3A3A3C",
+      "divider": "#2C2C2E",
+      "muted": "#93939F"
+    }
+  },
+  "typography": {
+    "displayFontFamily": "Manrope",
+    "textFontFamily": "Manrope",
+    "scale": {
+      "sm": 12,
+      "base": 14,
+      "lg": 16,
+      "xl": 20,
+      "2xl": 24
+    }
+  },
+  "spacing": {
+    "rule": "Generous vertical breathing room. Cards never flush to screen edges. Safe-area accounted for at roots.",
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "2xl": 32,
+    "3xl": 48
+  },
+  "radius_tokens": {
+    "sm": 8,
+    "md": 16,
+    "lg": 24,
+    "pill": 999
+  },
+  "shadow_tier": "1",
+  "navigation": "bottom_tabs",
+  "icon_set": "Ionicons",
+  "glassmorphism": {
+    "enabled": "true",
+    "do's": [
+      "Use blur on the bottom tab bar.",
+      "Use glass headers when content scrolls beneath.",
+      "Apply to sticky floating elements like 'Paste & Scan' CTAs."
+    ],
+    "dont's": [
+      "Never blur body text cards or standard inputs.",
+      "Do not use heavily saturated glassmorphism."
+    ]
+  },
+  "platform_libraries": {
+    "glass": {
+      "ios": "expo-glass-effect",
+      "android": "expo-blur",
+      "low_end_android_fallback": "solid surfaceSecondary"
+    },
+    "image": "expo-image",
+    "blur": "expo-blur",
+    "bottom_sheet": "@gorhom/bottom-sheet",
+    "animation": "react-native-reanimated",
+    "gesture": "react-native-gesture-handler"
+  },
+  "screens": [
+    {
+      "name": "Splash",
+      "purpose": "Launch screen.",
+      "layout": "Centered SCAM.TJ red shield logo on solid background (`surface`). No text. Fade-out transition to Onboarding/Home."
+    },
+    {
+      "name": "Onboarding",
+      "purpose": "Educate the user on features without requiring login.",
+      "layout": "Full-bleed background (subtle gradient). Content restricted to bottom 40% using a gradient scrim to ensure text readability. Title at 2xl, subtitle at base. Sticky 'Next' / 'Get Started' button at the bottom safe area.",
+      "states": {
+        "loading": "none",
+        "empty": "none",
+        "error": "none"
+      }
+    },
+    {
+      "name": "Home",
+      "purpose": "Dashboard showing live status and providing quick entry points.",
+      "layout": "1. Header: Apple Wallet style bold title 'Overview'. 2. Hero Card (`surfaceSecondary`, `lg` radius): Large icon representing safety status, 'Protected' or similar text, and total scans metric. 3. Quick Actions: 2x2 grid of cards (`md` radius, `surfaceSecondary`) for Scan Link, Scan Message, Check Phone, AI Helper. 4. Recent Scans: List format below the grid with a 'See All' header.",
+      "states": {
+        "loading": "Skeleton cards for Hero and Quick Actions.",
+        "empty": "Illustration + 'No recent scans' in the Recent Scans list area.",
+        "error": "Banner at top: 'Failed to load stats' with retry button."
+      }
+    },
+    {
+      "name": "Scan",
+      "purpose": "Input area to scan links, messages, or numbers.",
+      "layout": "1. Segmented control (pill-style) at the top to toggle Link/Message/Phone. 2. Large text area (`surfaceSecondary`, `md` radius) filling mid-screen. 3. Sticky action block: A row with a 'Paste' button and a prominent 'Scan' primary CTA pinned to the keyboard/bottom safe area.",
+      "states": {
+        "loading": "Spinner covering the input area or primary button.",
+        "empty": "Input field is empty.",
+        "error": "Red inline text below the input field if input format is invalid."
+      }
+    },
+    {
+      "name": "Result",
+      "purpose": "Show the safety outcome of a scan.",
+      "layout": "1. Hero area: Centered large icon inside a tinted circle reflecting the risk level (e.g., Red for Dangerous), bold risk text (`2xl`). 2. Details Card: List of risk indicators and offline heuristic results. 3. Action Buttons: 'Save to History', 'Ask AI about this' (pill buttons).",
+      "states": {
+        "loading": "Full screen centered spinner.",
+        "empty": "N/A",
+        "error": "Failed to parse result. Show 'Unknown Error' and 'Try Again' button."
+      }
+    },
+    {
+      "name": "AI Helper",
+      "purpose": "Chat interface with Gemini.",
+      "layout": "1. Chat log: User bubbles on right (`brandTertiary` background, `onSurface` text), AI bubbles on left (`surfaceSecondary` background). 2. Suggestion Chips: Horizontal scrollable pills above the input field for quick prompts (e.g., 'Is this safe?'). 3. Input area: Multiline input with a 'Send' icon button. Glassmorphism background for the input area.",
+      "states": {
+        "loading": "Typing indicator (3 dots) bubble for AI.",
+        "empty": "Welcome message bubble from AI + 2x2 grid of Suggestion Chips.",
+        "error": "'Failed to connect to AI' bubble with a retry action."
+      }
+    },
+    {
+      "name": "History",
+      "purpose": "List of past scans.",
+      "layout": "Standard list view. Each row has a leading icon (Link/Msg/Phone), a title (the scanned content truncated), a trailing risk badge (Safe/Suspicious/Dangerous), and a date. Swipe-to-delete action on rows.",
+      "states": {
+        "loading": "List skeleton.",
+        "empty": "Tinted icon + 'No scan history yet'.",
+        "error": "Failed to load history."
+      }
+    },
+    {
+      "name": "Settings",
+      "purpose": "App configuration (Theme, Language, Privacy).",
+      "layout": "Grouped list style (iOS style Settings). Sections for Appearance (System/Light/Dark), Language (TG/RU/EN), Data (Clear History), and About.",
+      "states": {
+        "loading": "none",
+        "empty": "none",
+        "error": "none"
+      }
+    }
+  ],
+  "haptics": {
+    "tab_press": "light",
+    "scan_button": "medium",
+    "segmented_control": "light",
+    "result_revealed": "success",
+    "danger_revealed": "error",
+    "ai_send": "light",
+    "list_swipe": "medium",
+    "history_delete": "rigid"
+  },
+  "instructions_to_main_agent": [
+    "Design Identity: Blend iOS-Native Clean (Premium minimal, generous spacing, high contrast, clean typography) with Tactile Playful (larger rounded corners, soft padded cards).",
+    "Typography: Use `Manrope` for all text. It supports Cyrillic natively and beautifully, matching the Tajik/Russian language requirements without looking generic.",
+    "Colors: Implement the Light and Dark palettes exactly as specified. Notice that `brandPrimary` is near-black/white for standard buttons to maintain a premium Apple Wallet feel. Reserve `brand` (#DE3B40) for danger, errors, and specific brand accents like the logo.",
+    "Risk Tokens: Use the defined `riskSafe`, `riskSuspicious`, `riskDangerous`, and `riskUnknown` for the scan results. Ensure text on top of these colors uses the defined `onRisk...` tokens.",
+    "Localization: Tajik text is notoriously long. Ensure all buttons, headers, and list rows use `flex-wrap` or `numberOfLines` correctly. Never hardcode fixed heights for text containers.",
+    "Scan Screen: Ensure the 'Scan' button is always reachable and pinned to the bottom (using `KeyboardAvoidingView` or safe area), even with long text inputs.",
+    "AI Chat: Suggestion chips should populate the text input when pressed to allow user review, except for explicit quick-actions like 'Explain why this is dangerous'.",
+    "Offline/No Auth: This app has no login. Onboarding flows directly to Home. Keep the UX frictionless.",
+    "Images: For empty states or decorative icons, default to tinted Lucide/Ionicons in a `brandTertiary` circle. Do not use generic AI-generated photos. For Onboarding, you can use subtle abstract gradients or simple vector elements."
+  ]
+}
